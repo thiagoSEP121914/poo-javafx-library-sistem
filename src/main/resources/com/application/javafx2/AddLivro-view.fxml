@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="425.0" prefWidth="656.0" styleClass="livroContainer" stylesheets="@global.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.javafx2.gui.controller.AddLivroViewController">
+   <children>
+      <Text layoutX="30.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar Livro" wrappingWidth="297.515625">
+         <font>
+            <Font name="Serif Regular" size="36.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtTitulo" layoutX="30.0" layoutY="177.0" styleClass="input" />
+      <Text layoutX="30.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo" wrappingWidth="255.515625">
+         <font>
+            <Font name="Serif Regular" size="36.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtLancamento" layoutX="296.0" layoutY="177.0" prefHeight="35.0" prefWidth="256.0" styleClass="input" />
+      <Text layoutX="296.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ano Lançamento" wrappingWidth="255.515625">
+         <font>
+            <Font name="Serif Regular" size="36.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtAutor" layoutX="30.0" layoutY="291.0" styleClass="input" />
+      <Text layoutX="30.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" wrappingWidth="255.515625">
+         <font>
+            <Font name="Serif Regular" size="36.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="generoComboBox" editable="true" layoutX="296.0" layoutY="291.0" prefHeight="35.0" prefWidth="213.0" promptText="Selecione" />
+      <Text layoutX="296.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genero" wrappingWidth="255.515625">
+         <font>
+            <Font name="Serif Regular" size="36.0" />
+         </font>
+      </Text>
+      <Button id="btnLeft" layoutX="221.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="35.0" prefWidth="298.0" styleClass="btn" text="  ADICIONAR" textAlignment="JUSTIFY">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/simbolo-de-mais-preto.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

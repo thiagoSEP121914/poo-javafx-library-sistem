@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="580.0" prefWidth="1024.0" styleClass="card" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.javafx2.gui.controller.MainViewController">
+   <children>
+      <AnchorPane layoutX="-2.0" layoutY="-3.0" prefHeight="62.0" prefWidth="1030.0" styleClass="header">
+         <children>
+            <TextField fx:id="searchField" layoutX="337.0" layoutY="14.0" onAction="#searchFieldOnAction" prefHeight="35.0" prefWidth="388.0" styleClass="input" />
+            <Button id="btnLogin2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="783.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="   Registar Emprestimo" textAlignment="JUSTIFY" />
+            <ImageView fitHeight="25.0" fitWidth="19.0" layoutX="349.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/lupa.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="19.0" fitWidth="12.0" layoutX="790.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/simbolo-de-mais-preto.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-2.0" layoutY="58.0" prefHeight="524.0" prefWidth="83.0" styleClass=".sidebar">
+         <children>
+            <ImageView fx:id="btnIivroIcon" fitHeight="35.0" fitWidth="25.0" layoutX="18.0" layoutY="51.0" onMouseClicked="#onBtnLivroClicked" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+               <image>
+                  <Image url="@imgs/book.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Text layoutX="19.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Livros" wrappingWidth="45.515625">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Text>
+            <ImageView fitHeight="35.0" fitWidth="25.0" layoutX="20.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+               <image>
+                  <Image url="@imgs/cliente.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Text layoutX="10.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes" wrappingWidth="45.515625">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Text>
+            <ImageView fitHeight="35.0" fitWidth="25.0" layoutX="18.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+               <image>
+                  <Image url="@imgs/emprestimo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Text layoutX="20.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuarios" wrappingWidth="71.515625">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Text>
+            <ImageView fitHeight="35.0" fitWidth="25.0" layoutX="18.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+               <image>
+                  <Image url="@imgs/user-interface.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Text layoutX="15.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Emprestimos" wrappingWidth="98.515625">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="134.0" layoutY="94.0" prefHeight="213.0" prefWidth="833.0" spacing="90.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="213.0" prefWidth="215.0" spacing="30.0" style="-fx-background-color: #FFF;" styleClass="card">
+               <children>
+                  <Label text="100" />
+                  <Label text="Livros" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="213.0" prefWidth="215.0" spacing="30.0" style="-fx-background-color: FFF;" styleClass="card">
+               <children>
+                  <Label text="100" />
+                  <Label text="Livros Emprestados" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="213.0" prefWidth="215.0" spacing="30.0" style="-fx-background-color: #FFF;" styleClass="card">
+               <children>
+                  <Label text="100" />
+                  <Label text="Usuarios Cadastrados" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <ScrollPane layoutX="134.0" layoutY="368.0" prefHeight="200.0" prefWidth="833.0" styleClass="scroolPane">
+         <content>
+            <TableView id="tbLivro" fx:id="tbLivro" prefHeight="200.0" prefWidth="812.0">
+              <columns>
+                <TableColumn id="idColumn" fx:id="idColumn" prefWidth="88.0" style="fx-text-fill: white;" styleClass="column" text="Id" />
+                <TableColumn id="tituloColumn" fx:id="tituloColumn" prefWidth="150.0" styleClass="column" text="TItulo" />
+                  <TableColumn id="anoLancamentoColumn" fx:id="anoLancamentoColumn" prefWidth="150.0" styleClass="column" text="Ano Lançamento" />
+                  <TableColumn id="autorColumn" fx:id="autorColumn" prefWidth="150.0" styleClass="column" text="Autor" />
+                  <TableColumn id="generoColumn" fx:id="generoColumn" prefWidth="150.0" styleClass="column" text="Genero" />
+                  <TableColumn id="statusColumn" fx:id="statusColumn" prefWidth="150.0" styleClass="column" text="Status" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+   <stylesheets>
+      <URL value="@style.css" />
+      <URL value="@global.css" />
+   </stylesheets>
+</AnchorPane>

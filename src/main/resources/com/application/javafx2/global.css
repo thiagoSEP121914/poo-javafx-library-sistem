@@ -1,0 +1,118 @@
+/* Importando a fonte do Google Fonts (se fosse possível) */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+
+/* Usando uma fonte local */
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('com/application/javafx2/fonts/Roboto_Condensed-Light.ttf') format('truetype');
+}
+.root {
+    -fx-background-color: #ffffff;
+    -fx-font-family: 'Roboto Condensed', sans-serif;
+    -fx-font-size: 16px;
+}
+
+#btnLogin {
+    -fx-text-fill: white; /* Cor do texto */
+    -fx-background-color: #1e90ff; /* Cor de fundo */
+    /* é presciso setar o backgreound-radiua para qua borda funcione corretamente */
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px; /* Bordas arredondadas */
+    -fx-border-width: 2px; /* Espessura da borda */
+}
+
+#loginContainer2 {
+    -fx-background-color: #1E90FF; /* Cor de fundo */
+    -fx-background-radius: 25px 0px 0px 25px; /* Bordas arredondadas apenas nos cantos esquerdo superior e inferior */
+    -fx-border-radius: 25px 0px 0px 25px; /* Bordas arredondadas apenas nos cantos esquerdo superior e inferior */
+    -fx-border-width: 1px;
+}
+
+.input {
+    -fx-background-radius:15px;
+    -fx-border-radius:15px;
+}
+
+
+
+
+.navBar {
+  -fx-background-color:#1E90FF;
+}
+
+.header {
+    -fx-background-color:#1E90FF;
+}
+
+.column {
+    -fx-text-fill:#2f3542;
+    -fx-background-color:#ffffff;
+}
+
+
+
+#btnLogin2 {
+    -fx-pref-width: 150px;  /* Corrigido de -fx-width para -fx-pref-width */
+    -fx-pref-height: 40px;  /* Corrigido de -fx-height para -fx-pref-height */
+    -fx-font-size: 12px;
+    -fx-text-fill: white;  /* Cor do texto */
+
+    -fx-background-color: #2ed573; /* Cor de fundo */
+
+    /* Para que a borda funcione corretamente, o background-radius deve ser definido */
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px; /* Bordas arredondadas */
+    -fx-border-width: 1px; /* Espessura da borda */
+    -fx-border-color: black; /* Cor da borda (necessário para que a borda apareça) */
+}
+
+.sidebar {
+    -fx-background-color:#ffffff;
+    -fx-background-radius:30px 30px 0px 0px;
+}
+
+.card {
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.3, 0, 5); /* Adiciona sombra */
+}
+
+.icon:hover {
+    -fx-scale-x: 1.5; /* Aumenta o tamanho na direção X */
+    -fx-scale-y: 1.5; /* Aumenta o tamanho na direção Y */
+    -fx-transition: transform 0.6s ease; /* Transição suave */
+    -fx-cursor: hand; /* Muda o cursor para uma mão quando passar sobre o ícone */
+}
+
+.btn {
+    -fx-pref-width:150px;
+    -fx-pref-width:150px;
+    -fx-font-size:12px;
+    -fx-text-fill:white;
+      /* Para que a borda funcione corretamente, o background-radius deve ser definido */
+     -fx-background-radius: 12px;
+     -fx-border-radius: 12px; /* Bordas arredondadas */
+     -fx-border-width: 1px; /* Espessura da borda */
+     -fx-border-color: black; /* Cor da borda (necessário para que a borda apareça) */
+    -fx-cursor:hand;
+}
+
+#btnLeft {
+    -fx-background-color: #2ed573;
+}
+
+#btnMiddle {
+    -fx-background-color: #1e90ff;
+}
+
+#btnRight {
+    -fx-background-color:#ff4757;
+}
+
+.livroContainer {
+    -fx-background-color: #FFF;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+    -fx-border-color: #000; /* Define uma cor para a borda */
+    -fx-border-width: 2px;  /* Opcional: define a espessura da borda */
+}
