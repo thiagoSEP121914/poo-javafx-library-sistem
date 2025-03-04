@@ -8,6 +8,6 @@ public interface LivroDao {
     List<Livro> findAll();
     List<Livro> findById();
     int insert (Livro obj);
-
     int update(Livro obj);
+    int delete(int id);
 }

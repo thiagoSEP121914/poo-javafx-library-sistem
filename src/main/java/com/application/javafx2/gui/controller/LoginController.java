@@ -1,8 +1,10 @@
 package com.application.javafx2.gui.controller;
 
 import com.application.javafx2.gui.ScreenLoader;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -29,8 +31,10 @@ public class LoginController implements Initializable {
      }
 
      @FXML
-     public void  onBtnLoginAction () {
+     public void  onBtnLoginAction (ActionEvent event) {
          ScreenLoader.loadForm("/com/application/javafx2/Main-view.fxml");
+         Stage stageAtual = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         stageAtual.close();
      }
 
     @Override

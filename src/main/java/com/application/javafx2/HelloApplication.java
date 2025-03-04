@@ -16,7 +16,6 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         String css = this.getClass().getResource("global.css" ).toExternalForm();
         scene.getStylesheets().add(css);
-
         stage.getIcons().add(new Image(getClass().getResourceAsStream("imgs/security.png")));
         stage.setTitle("Autentique-se");
         stage.setScene(scene);

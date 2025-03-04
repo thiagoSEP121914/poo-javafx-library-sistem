@@ -1,8 +1,10 @@
 package com.application.javafx2.gui.controller;
 
+import com.application.javafx2.gui.Alerts;
 import com.application.javafx2.gui.ScreenLoader;
 import com.application.javafx2.model.entity.Livro;
 import com.application.javafx2.model.service.LivroService;
+
 import com.application.javafx2.repository.Dao.DaoFactory;
 import com.application.javafx2.repository.Dao.LivroDao;
 import javafx.collections.FXCollections;
@@ -11,14 +13,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class LivroViewController implements Initializable, UpdateTableListener {
@@ -72,7 +73,7 @@ public class LivroViewController implements Initializable, UpdateTableListener {
     }
 
     @FXML
-    public void onBtnLivroMouseClicked() {
+    public void onBtnHomeMouseClicked() {
         System.out.println("CLicado clicado");
         ScreenLoader.loadForm("/com/application/javafx2/Livro-view.fxml");
     }
@@ -113,6 +114,28 @@ public class LivroViewController implements Initializable, UpdateTableListener {
         }
     }
 
+    @FXML
+    public void btnRemoverOnAction () {
+        System.out.println("fui clicado!!");
+        Livro livroSelecionado = tbLivro.getSelectionModel().getSelectedItem();
+        if (livroSelecionado == null) {
+            Alerts.showAlert("AVISO!", "NENHUM LIVRO SELECIONADO !", "Para deletar um livro é presciso selecionar antes", Alert.AlertType.WARNING);
+            return;
+        }
+        Optional<ButtonType> result = Alerts.showAlertYesNo("Aviso!", "Remover livro" ,"Deseja remover: " + livroSelecionado.getTitulo(), Alert.AlertType.CONFIRMATION);
+        if (result.isEmpty() || result.get() != ButtonType.OK) {
+            return;
+        }
+        LivroDao livroDao = DaoFactory.crateLivroDao();
+        LivroService service = new LivroService(livroDao);
+        if (service.remover(livroSelecionado.getId()) > 0) {
+            Alerts.showAlert("AVISO", "O livro foi removido", "LIVRO REMOVIDO COM SUCESSO!", Alert.AlertType.CONFIRMATION);
+        } else {
+            Alerts.showAlert("ERRO", "ERRO", "NÃO FOI POSSIVEL REMOVER O LIVRO: " + livroSelecionado.getTitulo() , Alert.AlertType.WARNING);
+        }
+        tbLivro.getSelectionModel().clearSelection();
+        loadTableView();
+    }
     @Override
     public void updateTable() {
         loadTableView();

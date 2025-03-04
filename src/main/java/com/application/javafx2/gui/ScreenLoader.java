@@ -31,4 +31,20 @@ public class ScreenLoader {
         stage.setScene(new Scene(parent));
         stage.show();
     }
+    public static void loadForm(String url, Stage currentStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(ScreenLoader.class.getResource(url));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage newStage = new Stage();
+            newStage.setScene(scene);
+            newStage.show();
+            if (currentStage != null) {
+                currentStage.close();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Não foi possível carregar a view: " + e.getMessage());
+        }
+    }
+
 }

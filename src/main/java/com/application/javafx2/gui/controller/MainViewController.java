@@ -7,13 +7,16 @@ import com.application.javafx2.repository.Dao.DaoFactory;
 import com.application.javafx2.repository.Dao.LivroDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.List;
@@ -56,7 +59,6 @@ public class MainViewController implements Initializable {
         autorColumn.setCellValueFactory(new PropertyValueFactory<>("autor"));
         generoColumn.setCellValueFactory(new PropertyValueFactory<>("genero"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-
         ObservableList<Livro> livros = loadTableView();
         tbLivro.setItems(livros);
 

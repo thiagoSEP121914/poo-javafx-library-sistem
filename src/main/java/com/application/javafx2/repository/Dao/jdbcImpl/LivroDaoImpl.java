@@ -67,7 +67,7 @@ public class LivroDaoImpl implements LivroDao {
     @Override
     public int update(Livro obj) {
         PreparedStatement ps;
-        String sql =  "Update livro "
+        String sql =  "UPDATE livro "
                      + "SET titulo = ?, ano_lancamento = ?, autor = ?, genero = ? "
                      + "WHERE id = ?";
 
@@ -81,6 +81,20 @@ public class LivroDaoImpl implements LivroDao {
             return ps.executeUpdate();
         }catch (SQLException e) {
             throw new RuntimeException("Não foi possivel Editar os dados " + e.getMessage());
+        }
+    }
+
+    @Override
+    public int delete(int id) {
+        PreparedStatement ps;
+        String sql = "DELETE FROM livro "
+                     + "WHERE id = ?";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,id);
+           return ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("ERRO AO REMOVER LIVRO" + e.getMessage());
         }
     }
 

@@ -25,4 +25,11 @@ public class LivroService {
         return repository.update(obj);
     }
 
+    public int remover (int id) {
+        if (id <= 0) {
+            throw new RuntimeException("ERRO O ID DEVE SER MAIOR QUE ZERO");
+        }
+        return repository.delete(id);
+    }
+
 }
